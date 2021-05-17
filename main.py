@@ -1,11 +1,10 @@
 from drawing import Drawing
-from heart import Heart
 
 
 def main():
     d = Drawing()
     print(d)
-    d.translate_image("flags_try/lgbtq.png")
+    d.translate_image("flags_try/2.png")
     print(d)
 
 
