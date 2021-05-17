@@ -4,12 +4,10 @@ from heart import Heart
 
 def main():
     d = Drawing()
-    d.add_row([Heart("red"), Heart("red"), Heart("red"), Heart("red")])
-    d.add_row([Heart("blue"), Heart("blue"), Heart("green"), Heart("green")])
+    print(d)
+    d.translate_image("flags_try/lgbtq.png")
     print(d)
 
 
 if __name__ == '__main__':
     main()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
