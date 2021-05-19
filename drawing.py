@@ -18,14 +18,14 @@ class Drawing:
         rows = rows.split('\n')
         self.emojis += rows
 
-    def __add_space_row(self):
-        self.add_row([Heart("white") for _ in range(10)])
+    def __add_space_row(self, background_color="white"):
+        self.add_row([Heart(background_color) for _ in range(10)])
 
     def add_text(self, text, color="blue", background_color="white"):
         for char in text:
-            self.__add_space_row()
+            self.__add_space_row(background_color)
             self.add_row(str(Letter(char, color, background_color)))
-        self.__add_space_row()
+        self.__add_space_row(background_color)
 
     def get_drawing(self):
         string = '\n'.join([''.join(row) for row in self.emojis]) + '\n'
@@ -93,22 +93,22 @@ class Letter:
         'i': "----r-----\n----------\n----r-----\n----r-----\n----r-----\n----r-----\n----r-----",
         'J': "-----r----\n-----r----\n-----r----\n-----r----\n-----r----\n-----r----\n-----r----\n---rr-----",
         'j': "-----r----\n----------\n-----r----\n-----r----\n-----r----\n-----r----\n-----r----\n-----r----\n---rr-----",
-        'K': "",
-        'k': "",
-        'L': "",
-        'l': "",
+        'K': "---r---r--\n---r--r---\n---r-r----\n---rr-----\n---r-r----\n---r--r---\n---r--r---\n---r---r--",
+        'k': "---r------\n---r------\n---r--r---\n---r-r----\n---rr-----\n---r-r----\n---r-r----\n---r--r---",
+        'L': "---r------\n---r------\n---r------\n---r------\n---r------\n---r------\n---r------\n---rrrr---",
+        'l': "---r------\n---r------\n---r------\n---r------\n---r------\n---r------\n---r------\n---r------\n---r------",
         'M': "-rr----rr-\n-rr----rr-\n-r-r--r-r-\n-r-r--r-r-\n-r-r--r-r-\n-r-r--r-r-\n-r--rr--r-\n-r--rr--r-",
         'm': "-r-rr-rr--\n-rr--r--r-\n-r---r--r-\n-r---r--r-\n-r---r--r-\n-r---r--r-",
         'N': "---rr---r-\n---rr---r-\n---r-r--r-\n---r-r--r-\n---r--r-r-\n---r--r-r-\n---r---rr-\n---r---rr-",
         'n': "---r-rr---\n---rr--r--\n---r---r--\n---r---r--\n---r---r--\n---r---r--",
         'O': "----rrr---\n---r---r--\n--r-----r-\n--r-----r-\n--r-----r-\n--r-----r-\n---r---r--\n----rrr---",
         'o': "----rrr---\n---r---r--\n---r---r--\n---r---r--\n---r---r--\n----rrr---",
-        'P': "",
-        'p': "",
-        'Q': "",
-        'q': "",
-        'R': "",
-        'r': "",
+        'P': "---rrrr---\n---r---r--\n---r---r--\n---r---r--\n---rrrr---\n---r------\n---r------\n---r------",
+        'p': "---rrrr---\n---r---r--\n---r---r--\n---r---r--\n---r---r--\n---rrrr---\n---r------\n---r------",
+        'Q': "----rrr---\n---r---r--\n--r-----r-\n--r-----r-\n--r-----r-\n--r-----r-\n---r---r--\n----rrrr--\n--------rr",
+        'q': "----rrrr--\n---r---r--\n---r---r--\n---r---r--\n---r---r--\n----rrrr--\n-------r--\n-------r--",
+        'R': "---rrrr---\n---r---r--\n---r---r--\n---r---r--\n---rrrr---\n---r--r---\n---r---r--\n---r---r--",
+        'r': "---r-rr---\n---rr-----\n---r------\n---r------\n---r------\n---r------",
         'S': "----rr----\n---r--r---\n---r------\n----r-----\n-----r----\n------r---\n---r--r---\n----rr----",
         's': "----rrr---\n---r------\n---rr-----\n-----rr---\n------r---\n---rrr----",
         'T': "--rrrrr---\n----r-----\n----r-----\n----r-----\n----r-----\n----r-----\n----r-----\n----r-----",

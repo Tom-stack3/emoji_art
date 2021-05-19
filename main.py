@@ -3,8 +3,8 @@ from drawing import Drawing
 
 def main():
     d = Drawing()
-    d.translate_image("flags_try/letters.png")
-    #d.add_text("SsUu", "brown")
+    #d.translate_image("flags_try/letters3.png")
+    d.add_text("We want to sleep in the Uni", "brown")
     print(d)
 
 

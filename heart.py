@@ -48,5 +48,4 @@ class Heart:
 
         closest_color = self.__find_nearest_color(rgb)
         current_color = color_dict[closest_color]
-        print(current_color)
         return self.str_colors[current_color]
