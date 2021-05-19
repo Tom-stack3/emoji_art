@@ -14,6 +14,19 @@ class Drawing:
         row = [str(e) for e in row]
         self.emojis.append(row)
 
+    def add_rows(self, rows):
+        rows = rows.split('\n')
+        self.emojis += rows
+
+    def __add_space_row(self):
+        self.add_row([Heart("white") for _ in range(10)])
+
+    def add_text(self, text, color="blue", background_color="white"):
+        for char in text:
+            self.__add_space_row()
+            self.add_row(str(Letter(char, color, background_color)))
+        self.__add_space_row()
+
     def get_drawing(self):
         string = '\n'.join([''.join(row) for row in self.emojis]) + '\n'
         pyperclip.copy(string)
@@ -43,9 +56,9 @@ class Drawing:
         
         new_img_pixels = np.array(new_img_pixels, dtype=np.uint8)
         """
-        #new_img = Image.fromarray(np.array(new_img_pixels))
-        #img.show()
-        #new_img.show()
+        # new_img = Image.fromarray(np.array(new_img_pixels))
+        # img.show()
+        # new_img.show()
         new_img_pixels = img_pixels
         for row in new_img_pixels:
             new_row = []
@@ -55,3 +68,33 @@ class Drawing:
 
     def __repr__(self):
         return self.get_drawing()
+
+
+class Letter:
+    letters_dict = {
+        'A': "-----r----\n-----r----\n----r-r---\n----r-r---\n---r---r--\n---rrrrr--\n--r-----r-\n--r-----r-",
+        'a': "---rrrr---\n-------r--\n----rrrr--\n---r---r--\n---r---r--\n----rrrr--",
+        'B': "---rrr----\n---r--r---\n---r--r---\n---rrrr---\n---r---r--\n---r---r--\n---r---r--\n---rrrr---",
+        'b': "---r------\n---r------\n---r------\n---rrrr---\n---r---r--\n---r---r--\n---r---r--\n---r---r--\n---rrrr---",
+        'C': "",
+        'c': "",
+        'D': "",
+        'd': "",
+        'E': "",
+        'e': "",
+        'F': "",
+        'f': "",
+        'S': "----rr----\n---r--r---\n---r------\n----r-----\n-----r----\n------r---\n---r--r---\n----rr----",
+        's': "----rrr---\n---r------\n---rr-----\n-----rr---\n------r---\n---rrr----",
+        'U': "---r----r-\n---r----r-\n---r----r-\n---r----r-\n---r----r-\n---r----r-\n---r----r-\n----rrrr--",
+        'u': "---r---r--\n---r---r--\n---r---r--\n---r---r--\n---r--rr--\n----rr-r--",
+        'Y': "---r---r--\n---r---r--\n----r-r---\n----r-r---\n-----r----\n-----r----\n-----r----\n-----r----",
+        'y': "---r---r--\n---r---r--\n----r-r---\n----r-r---\n-----r----\n-----r----\n----r-----\n----r-----"
+    }
+
+    def __init__(self, char, color="blue", background_color="white"):
+        self.representation = self.letters_dict[char].replace("r", str(Heart(color))).replace("-", str(
+            Heart(background_color)))
+
+    def __repr__(self):
+        return self.representation
