@@ -51,7 +51,7 @@ class Drawing:
         img = img.convert('RGB')
         # we resize the image but keep the aspect ratio. this tuple is the maximum width and maximum height of the img.
         # we use the NEAREST filter to keep the sharpness of the edges.
-        img.thumbnail((10, 500), Image.NEAREST)
+        img.thumbnail((10, 500))
 
         img_pixels = np.array(img)
 
