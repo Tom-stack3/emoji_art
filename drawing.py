@@ -57,7 +57,7 @@ class Drawing:
         new_img_pixels = np.array(new_img_pixels, dtype=np.uint8)
         """
         # new_img = Image.fromarray(np.array(new_img_pixels))
-        # img.show()
+        img.show()
         # new_img.show()
         new_img_pixels = img_pixels
         for row in new_img_pixels:
