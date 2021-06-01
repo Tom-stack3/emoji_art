@@ -4,6 +4,10 @@ from PIL import Image
 import pyperclip
 from heart import Heart
 
+DEFAULT_BACKGROUND_COLOR = "white"
+DEFAULT_TEXT_COLOR = "blue"
+DEFAULT_AMOGUS_COLOR = "red"
+
 
 class Drawing:
     def __init__(self):
@@ -18,14 +22,17 @@ class Drawing:
         rows = rows.split('\n')
         self.emojis += rows
 
-    def __add_space_row(self, background_color="white"):
+    def __add_space_row(self, background_color=DEFAULT_BACKGROUND_COLOR):
         self.add_row([Heart(background_color) for _ in range(10)])
 
-    def add_text(self, text, color="blue", background_color="white"):
+    def add_text(self, text, color=DEFAULT_TEXT_COLOR, background_color=DEFAULT_BACKGROUND_COLOR):
         for char in text:
             self.__add_space_row(background_color)
             self.add_row(str(Letter(char, color, background_color)))
         self.__add_space_row(background_color)
+
+    def draw_amogus(self, color=DEFAULT_AMOGUS_COLOR, background_color=DEFAULT_BACKGROUND_COLOR):
+        self.add_rows(str(Amogus(color, background_color)))
 
     def get_drawing(self):
         string = '\n'.join([''.join(row) for row in self.emojis]) + '\n'
@@ -68,6 +75,23 @@ class Drawing:
 
     def __repr__(self):
         return self.get_drawing()
+
+
+class Amogus:
+    text_representation = "----------\n----rrrr--\n---rrrrrr-\n---rreeee-\n-rrrreeee-\n-rrrreeee-\n-rrrrrrrr-\n" \
+                          "-rrrrrrrr-\n-rrrrrrrr-\n---rrrrrr-\n---rr-rr--\n---rr-rr--\n----------"
+
+    def __init__(self, color=DEFAULT_AMOGUS_COLOR, background_color=DEFAULT_BACKGROUND_COLOR):
+
+        self.representation = self.text_representation.replace("r", str(Heart(color))).replace("-", str(
+            Heart(background_color)))
+        if color == "blue":
+            self.representation = self.representation.replace("e", "🌐")
+        else:
+            self.representation = self.representation.replace("e", "💙")
+
+    def __repr__(self):
+        return self.representation
 
 
 class Letter:
@@ -127,7 +151,7 @@ class Letter:
         'z': "---rrr----\n-----r----\n----r-----\n----r-----\n---r------\n---rrr----",
     }
 
-    def __init__(self, char, color="blue", background_color="white"):
+    def __init__(self, char, color=DEFAULT_TEXT_COLOR, background_color=DEFAULT_BACKGROUND_COLOR):
         self.representation = self.letters_dict[char].replace("r", str(Heart(color))).replace("-", str(
             Heart(background_color)))
 
