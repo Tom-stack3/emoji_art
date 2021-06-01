@@ -44,14 +44,14 @@ class Drawing:
         img = Image.open(img_path)
 
         # Create a white rgba background
-        # new_image = Image.new("RGBA", img.size, TRANSPARENT_BACKGROUND_COLOR)
+        new_image = Image.new("RGBA", img.size, TRANSPARENT_BACKGROUND_COLOR)
         # Paste the image on the background.
-        # new_image.paste(image, (0, 0), img)
+        new_image.paste(img, (0, 0), img)
 
-        img = img.convert('RGB')
+        img = new_image.convert('RGB')
         # we resize the image but keep the aspect ratio. this tuple is the maximum width and maximum height of the img.
         # we use the NEAREST filter to keep the sharpness of the edges.
-        img.thumbnail((10, 500))
+        img.thumbnail((10, 500))#, Image.NEAREST)
 
         img_pixels = np.array(img)
 
