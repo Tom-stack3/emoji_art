@@ -4,6 +4,7 @@ from PIL import Image
 import pyperclip
 from heart import Heart
 
+TRANSPARENT_BACKGROUND_COLOR = "white"
 DEFAULT_BACKGROUND_COLOR = "white"
 DEFAULT_TEXT_COLOR = "blue"
 DEFAULT_AMOGUS_COLOR = "red"
@@ -40,13 +41,33 @@ class Drawing:
         return string
 
     def translate_image(self, img_path):
-        img = Image.open(img_path).convert('RGB')
+        image = Image.open(img_path)
+
+        # Create a white rgba background
+        new_image = Image.new("RGBA", image.size, TRANSPARENT_BACKGROUND_COLOR)
+        # Paste the image on the background.
+        new_image.paste(image, (0, 0), image)
+
+        img = new_image.convert('RGB')
         # we resize the image but keep the aspect ratio. this tuple is the maximum width and maximum height of the img
         img.thumbnail((10, 500))
-
-        # uint8 -> 0 to 255
         img_pixels = np.array(img)
-        """
+
+        img.show()
+        new_img_pixels = img_pixels
+        for row in new_img_pixels:
+            new_row = []
+            for pixel in row:
+                new_row.append(Heart(pixel))
+            self.add_row(new_row)
+
+    def __repr__(self):
+        return self.get_drawing()
+
+    # not used, because doesn't resize and keeps the proportion.
+    @staticmethod
+    def __old_method(img_pixels):
+        # uint8 -> 0 to 255
         new_img_pixels = []
         for row in img_pixels:
             new_row = []
@@ -60,21 +81,8 @@ class Drawing:
                 i += 10
             new_row = np.array(new_row, dtype=np.uint8)
             new_img_pixels.append(new_row)
-        
-        new_img_pixels = np.array(new_img_pixels, dtype=np.uint8)
-        """
-        # new_img = Image.fromarray(np.array(new_img_pixels))
-        img.show()
-        # new_img.show()
-        new_img_pixels = img_pixels
-        for row in new_img_pixels:
-            new_row = []
-            for pixel in row:
-                new_row.append(Heart(pixel))
-            self.add_row(new_row)
 
-    def __repr__(self):
-        return self.get_drawing()
+        return np.array(new_img_pixels, dtype=np.uint8)
 
 
 class Amogus:
