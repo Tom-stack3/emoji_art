@@ -1,8 +1,8 @@
-# to copy the drawing to the clipboard.
 import numpy as np
 from PIL import Image
-import pyperclip
 from heart import Heart
+# to copy the drawing to the clipboard.
+import pyperclip
 
 TRANSPARENT_BACKGROUND_COLOR = "white"
 DEFAULT_BACKGROUND_COLOR = "white"
@@ -37,6 +37,7 @@ class Drawing:
 
     def get_drawing(self):
         string = '\n'.join([''.join(row) for row in self.emojis]) + '\n'
+        # copy the drawing to the clipboard.
         pyperclip.copy(string)
         return string
 

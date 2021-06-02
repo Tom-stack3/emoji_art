@@ -3,9 +3,9 @@ from drawing import Drawing
 
 def main():
     d = Drawing()
-    d.translate_image("flags_try/j.png", True)
-    # d.add_text("We want to sleep in the Uni", "brown")
-    # d.draw_amogus("brown", "black")
+    d.translate_image("flags_try/japan.png", True)
+    # d.add_text("Hi", "brown")
+    #d.draw_amogus("pink")
     print(d)
 
 
