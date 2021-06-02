@@ -40,7 +40,7 @@ class Drawing:
         pyperclip.copy(string)
         return string
 
-    def translate_image(self, img_path):
+    def translate_image(self, img_path, use_nearest_filter=True):
         img = Image.open(img_path)
 
         # Create a white rgba background
@@ -50,8 +50,12 @@ class Drawing:
 
         img = new_image.convert('RGB')
         # we resize the image but keep the aspect ratio. this tuple is the maximum width and maximum height of the img.
-        # we use the NEAREST filter to keep the sharpness of the edges.
-        img.thumbnail((10, 500), Image.NEAREST)
+        if use_nearest_filter:
+            # we use the NEAREST filter to keep the sharpness of the edges.
+            img.thumbnail((10, 500), Image.NEAREST)
+        else:
+            img.thumbnail((10, 500))
+
 
         img_pixels = np.array(img)
 
