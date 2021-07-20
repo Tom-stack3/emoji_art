@@ -7,6 +7,7 @@ class Heart:
         self.str_colors = {"red": "❤️", "orange": "🧡", "yellow": "💛", "green": "💚", "blue": "💙", "purple": "💜",
                            "black": "🖤", "white": "🤍", "brown": "🤎", "pink": "💗"}
 
+        # in RGB format
         self.main_colors = {
             (249, 91, 90): "red",
             (187, 0, 19): "red",
@@ -17,6 +18,7 @@ class Heart:
             (41, 163, 229): "blue",
             (0, 30, 150): "blue",
             (157, 108, 229): "purple",
+            (118, 1, 136): "purple",
             (25, 25, 25): "black",
             (240, 240, 240): "white",
             (167, 98, 76): "brown",

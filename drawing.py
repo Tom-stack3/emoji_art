@@ -57,10 +57,11 @@ class Drawing:
         else:
             img.thumbnail((10, 500))
 
-
         img_pixels = np.array(img)
 
-        img.show()
+        # if you want to see the resized photo
+        # img.show()
+
         new_img_pixels = img_pixels
         for row in new_img_pixels:
             new_row = []
