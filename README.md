@@ -13,7 +13,7 @@ code:
 drawing = Drawing()
 drawing.translate_image("image/src/here.cool", True)
 # the second parameter is to decide about the usage of the NEAREST filter.
-# (See examples below about it in chapter "the NEAREST filter:")  
+# (See examples below about it in chapter "the NEAREST filter")  
 ```
 | Input Image  | Result | Source|
 | ------------- | ------------- | ------------- |
