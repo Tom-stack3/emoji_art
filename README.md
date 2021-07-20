@@ -8,7 +8,13 @@ A python program to generate Emoji art. The art is generated in a fixed width of
 
 ## Examples:
 ### (1 - Image to Emoji art)
-
+code:
+``` python
+drawing = Drawing()
+drawing.translate_image("image/src/here.cool", True)
+# the second parameter is to decide about the usage of the NEAREST filter.
+# (See examples below about it in chapter "the NEAREST filter:")  
+```
 | Input Image  | Result | Source|
 | ------------- | ------------- | ------------- |
 | <img src="./examples/cuba.jpg" width="225"> |❤️💙💙💙💙💙💙💙💙💙<br>❤️❤️❤️🤍🤍🤍🤍🤍🤍🤍<br>❤️🤍❤️❤️💙💙💙💙💙💙<br>❤️❤️❤️🤍🤍🤍🤍🤍🤍🤍<br>❤️💙💙💙💙💙💙💙💙💙 | Flag of Cuba |
@@ -19,6 +25,7 @@ A python program to generate Emoji art. The art is generated in a fixed width of
 ### (2 - Text to Emoji art)
 code:
 ``` python
+drawing = Drawing()
 drawing.add_text("TEXT HERE", "main_color", "background_color")
 ```
 
@@ -48,6 +55,7 @@ drawing.add_text("TEXT HERE", "main_color", "background_color")
 ### (3 - Among-us character)
 code:
 ``` python
+drawing = Drawing()
 drawing.draw_amogus("body_color", "background_color")
 ```
 

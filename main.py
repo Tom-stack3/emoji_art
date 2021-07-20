@@ -3,7 +3,7 @@ from drawing import Drawing
 
 def main():
     d = Drawing()
-    #d.translate_image("flags_try/discord.jpg", True)
+    d.translate_image("flags_try/discord.jpg", True)
     #d.add_text("Hmm", "green")
     d.draw_amogus("pink", "green")
     print(d)
