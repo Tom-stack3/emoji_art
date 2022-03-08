@@ -1,5 +1,5 @@
 # emoji_art
-A python program to generate Emoji art. The art is generated in a fixed width of 10 emojis, in order to be compatible with Whatsapp Messages.
+A python program to generate Emoji art. The art is generated in a fixed width of 10 emojis, in order to be compatible with WhatsApp Messages.
 
 **Functionalities:**
 1. Transform an Image into Emoji art.
@@ -8,12 +8,11 @@ A python program to generate Emoji art. The art is generated in a fixed width of
 
 ## Examples:
 ### 1 - Image to Emoji art
-code:
-``` python
+```python
 drawing = Drawing()
 drawing.translate_image("image/src/here.cool", True)
-# the second parameter is to decide about the usage of the NEAREST filter.
-# (See examples below about it in chapter "the NEAREST filter")  
+# The second parameter is to decide whether the NEAREST filter is applied (applied by default).
+# (See examples in the "NEAREST filter" section)
 ```
 | Input Image  | Result | Source|
 | ------------- | ------------- | ------------- |
@@ -23,10 +22,9 @@ drawing.translate_image("image/src/here.cool", True)
 | <img src="./examples/discord.jpg" width="225">|💜💜💜💜💜💜💜💜💜💜<br>💜💜💜💜💜💜💜💜💜💜<br>💜💜💜🤍💜💜🤍💜💜💜<br>💜💜🤍🤍🤍🤍🤍🤍💜💜<br>💜💜🤍🤍🤍🤍🤍🤍🤍💜<br>💜🤍🤍💜🤍💜💜🤍🤍💜<br>💜🤍🤍🤍🤍🤍🤍🤍🤍💜<br>💜💜🤍💜💜💜💜🤍💜💜<br>💜💜💜💜💜💜💜💜💜💜<br>💜💜💜💜💜💜💜💜💜💜|Discord's logo|
 
 ### 2 - Text to Emoji art
-code:
-``` python
+```python
 drawing = Drawing()
-drawing.add_text("TEXT HERE", "main_color", "background_color")
+drawing.add_text("Some Text", "<main_color>", "<background_color>")
 ```
 
 
@@ -53,10 +51,9 @@ drawing.add_text("TEXT HERE", "main_color", "background_color")
 
 
 ### 3 - Among-us character
-code:
-``` python
+```python
 drawing = Drawing()
-drawing.draw_amogus("body_color", "background_color")
+drawing.draw_amogus("<body_color>", "<background_color>")
 ```
 
 `drawing.draw_amogus("pink", "green")`
@@ -76,8 +73,8 @@ drawing.draw_amogus("body_color", "background_color")
 💚💚💚💚💚💚💚💚💚💚
 
 
-### the NEAREST filter:
-| without the NEAREST filter  | with the NEAREST filer | Logo|
+### NEAREST filter:
+| Without the NEAREST filter  | With the NEAREST filer | Logo|
 | ------------- | ------------- | ------------- |
 |🤍🤍🤍🤍🤍💗🤍🤍🤍🤍<br>🤍🤍💗❤️❤️❤️❤️💗🤍🤍<br>🤍💗❤️❤️❤️💗❤️💗🤍🤍<br>🤍❤️❤️🤍🤍🤍🤍🤍🤍🤍<br>💛🧡💗🤍🤍🤍🤍🤍🤍🤍<br>💛🧡🤍🤍🤍💙💙💙💙💜<br>💛🧡🤍🤍🤍🤍🤍💜💙💜<br>🤍💚💚🤍🤍🤍🤍💙💙🤍<br>🤍💜💚💚💙💜💚💙💜🤍<br>🤍🤍💜💚💚💚💚💙🤍🤍<br>🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍  | 🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍<br>🤍🤍💗❤️❤️❤️❤️❤️🤍🤍<br>🤍❤️❤️❤️❤️❤️❤️❤️🤍🤍<br>🤍❤️❤️🤍🤍🤍🤍🤍🤍🤍<br>🤍🧡❤️🤍🤍🤍🤍🤍🤍🤍<br>🧡🧡🤍🤍🤍💙💙💙💙💙<br>🤍🧡💜🤍🤍🤍🤍🤍💙🤍<br>🤍💚💚🤍🤍🤍🤍💙💙🤍<br>🤍💚💚💚💚💚💚💙💙🤍<br>🤍🤍💚💚💚💚💚💚🤍🤍<br>🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍|[Google's favicon](./examples/google_logo.png)|
 |🤍🤍💜🤎🖤🖤🤎💜🤍🤍<br>🤍🤎🖤🖤🖤🖤🖤🖤🤎🤍<br>💜🖤💜💜💜💜💜💜🖤💜<br>🖤🖤🤍🤍🤍🤍🤍🤍🖤🤎<br>🖤🖤🤍🤍🤍🤍🤍🤍🖤🖤<br>🖤🖤🤍🤍🤍🤍🤍🤍🖤🖤<br>🖤🖤💜🤍🤍🤍🤍💜🖤🤎<br>💜🤎🤎🤎🤍🤍🤎🖤🖤💜<br>🤍🤎🤎💜🤍🤍🤎🖤🤎🤍<br>🤍🤍💜💜🤍🤍💜💜🤍🤍|🤍🤍🤍🖤🖤🖤🖤🤍🤍🤍<br>🤍🖤🖤🖤🖤🖤🖤🖤🖤🤍<br>🤍🖤🤍🤍🤍🤍🤍🤍🖤🤍<br>🖤🖤🤍🤍🤍🤍🤍🤍🖤🖤<br>🖤🖤🤍🤍🤍🤍🤍🤍🖤🖤<br>🖤🖤🤍🤍🤍🤍🤍🤍🖤🖤<br>🖤🖤🤍🤍🤍🤍🤍🤍🖤🖤<br>🤍🖤🖤🖤🤍🤍🖤🖤🖤🤍<br>🤍🖤🖤🤍🤍🤍🖤🖤🖤🤍<br>🤍🤍🤍🖤🤍🤍🖤🤍🤍🤍|[GitHub mark logo](./examples/github_logo.png)|
