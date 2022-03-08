@@ -1,6 +1,4 @@
 import numpy as np
-from scipy.spatial import KDTree
-
 
 class Heart:
     def __init__(self, color):
