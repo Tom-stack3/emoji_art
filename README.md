@@ -1,4 +1,4 @@
-# whatsapp_art
+# emoji_art
 A python program to generate Emoji art. The art is generated in a fixed width of 10 emojis, in order to be compatible with Whatsapp Messages.
 
 **Functionalities:**
@@ -7,7 +7,7 @@ A python program to generate Emoji art. The art is generated in a fixed width of
 3. Draw Among-us character in Emoji art (customizable colors).
 
 ## Examples:
-### (1 - Image to Emoji art)
+### 1 - Image to Emoji art
 code:
 ``` python
 drawing = Drawing()
@@ -22,7 +22,7 @@ drawing.translate_image("image/src/here.cool", True)
 | <img src="./examples/tanzania.png" width="225"> |💚💚💚💚💚💚💚💛🖤🖤<br>💚💚💚💚💚💛🖤🖤🖤💛<br>💚💚💚💚💛🖤🖤🖤💛💙<br>💚💚💚🖤🖤🖤🖤💙💙💙<br>💚💛🖤🖤🖤💛💙💙💙💙<br>💛🖤🖤🖤💛💙💙💙💙💙<br>🖤🖤💛💙💙💙💙💙💙💙| Flag of Tanzania |
 | <img src="./examples/discord.jpg" width="225">|💜💜💜💜💜💜💜💜💜💜<br>💜💜💜💜💜💜💜💜💜💜<br>💜💜💜🤍💜💜🤍💜💜💜<br>💜💜🤍🤍🤍🤍🤍🤍💜💜<br>💜💜🤍🤍🤍🤍🤍🤍🤍💜<br>💜🤍🤍💜🤍💜💜🤍🤍💜<br>💜🤍🤍🤍🤍🤍🤍🤍🤍💜<br>💜💜🤍💜💜💜💜🤍💜💜<br>💜💜💜💜💜💜💜💜💜💜<br>💜💜💜💜💜💜💜💜💜💜|Discord's logo|
 
-### (2 - Text to Emoji art)
+### 2 - Text to Emoji art
 code:
 ``` python
 drawing = Drawing()
@@ -52,7 +52,7 @@ drawing.add_text("TEXT HERE", "main_color", "background_color")
 💗💗💗💗💗💗💗💗💗💗
 
 
-### (3 - Among-us character)
+### 3 - Among-us character
 code:
 ``` python
 drawing = Drawing()
