@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
 from drawing import Drawing
 
 
 def main():
     d = Drawing()
-    d.translate_image("flags_try/discord.jpg", True)
-    #d.add_text("Hmm", "green")
+    d.translate_image("./examples/tanzania.png", True)
+    d.add_text("Hi there", "green")
     d.draw_amogus("pink", "green")
     print(d)
 
